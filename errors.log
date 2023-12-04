@@ -1,0 +1,25 @@
+{"level":"error","message":"Error al abrir el login - Detalle: dasd is not defined","timestamp":"2023-11-27T03:18:32.486Z"}
+{"level":"error","message":"Error al abrir el login - Detalle: productosController.listarProductos1 is not a function","timestamp":"2023-11-27T16:55:03.485Z"}
+{"level":"error","message":"Error al acceder a productos - Detalle: productosController.listarProductos1 is not a function","timestamp":"2023-11-27T16:55:52.835Z"}
+{"level":"error","message":"Error al acceder a productos - Detalle: productos1981 is not defined","timestamp":"2023-11-27T16:57:00.864Z"}
+{"level":"error","message":"Error al abrir detalle de producto - Detalle: productoDB1981 is not defined","timestamp":"2023-11-27T17:07:54.812Z"}
+{"level":"fatal","message":"Error al abrir detalle de producto - Detalle: productoDB1981 is not defined","timestamp":"2023-11-27T17:08:32.509Z"}
+{"level":"error","message":"No se pudo crear correctamente el producto","timestamp":"2023-11-27T18:14:11.725Z"}
+{"level":"error","message":"No se pudo crear correctamente el producto req.logger.warn is not a function","stack":"TypeError: req.logger.warn is not a function\n    at C:\\Users\\ACER\\Desktop\\CODER-BACKEND\\Desafíos\\def14-AlonsoMauricio\\src\\router\\vistas.router.js:239:18\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"2023-11-27T18:21:26.599Z"}
+{"level":"error","message":"No se pudo crear correctamente el producto req.logger.warn is not a function","stack":"TypeError: req.logger.warn is not a function\n    at C:\\Users\\ACER\\Desktop\\CODER-BACKEND\\Desafíos\\def14-AlonsoMauricio\\src\\router\\vistas.router.js:239:18\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"2023-11-27T18:21:45.387Z"}
+{"level":"error","message":"No se pudo crear correctamente el producto req.logger.warn is not a function","stack":"TypeError: req.logger.warn is not a function\n    at C:\\Users\\ACER\\Desktop\\CODER-BACKEND\\Desafíos\\def14-AlonsoMauricio\\src\\router\\vistas.router.js:239:18\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"2023-11-27T18:22:24.933Z"}
+{"level":"error","message":"Error al ingresar al chat - Detalle: pepito is not defined","timestamp":"2023-11-27T22:14:10.224Z"}
+{"level":"error","message":"Error al acceder a la página de registro - Detalle: pepito is not defined","timestamp":"2023-11-27T22:23:28.876Z"}
+{"level":"error","message":"Error al acceder al perfil - Detalle: pepito is not defined","timestamp":"2023-11-27T22:32:15.995Z"}
+{"level":"fatal","message":"Error al acceder a la página de inicio de sesión - Detalle: cacheuta is not defined","timestamp":"2023-11-27T22:36:39.877Z"}
+{"level":"fatal","message":"Error al acceder a la página de administrador - Detalle: cacheuta is not defined","timestamp":"2023-11-27T22:38:45.953Z"}
+{"level":"error","message":"Error al acceder a la ruta de productos simulados - Detalle: pepito is not defined","timestamp":"2023-11-27T22:42:12.299Z"}
+{"level":"error","message":"Error al acceder a la ruta de detalles del producto simulado - Detalle: pepito is not defined","timestamp":"2023-11-27T22:42:40.638Z"}
+{"level":"error","message":"Error al acceder a la ruta de crear carrito - Detalle: pepito is not defined","timestamp":"2023-11-27T22:51:49.036Z"}
+{"level":"fatal","message":"Error al acceder a la ruta de crear carrito - Detalle: pepito is not defined","timestamp":"2023-11-27T22:52:10.320Z"}
+{"level":"error","message":"Error al manejar la ruta de login - Detalle: prueba is not defined","timestamp":"2023-11-28T00:17:10.209Z"}
+{"level":"error","message":"Error al destruir la sesión - Detalle: Cannot read properties of undefined (reading 'usuario')","timestamp":"2023-11-28T00:19:33.486Z"}
+{"level":"error","message":"Error al manejar la ruta de logout - Detalle: Cannot read properties of undefined (reading 'email')","timestamp":"2023-11-28T00:23:14.945Z"}
+{"level":"error","message":"Error al manejar la solicitud de inicio de sesión como administrador - Detalle: pepito is not defined","timestamp":"2023-11-28T00:37:51.966Z"}
+{"level":"fatal","message":"Error al manejar la solicitud de inicio de sesión como administrador - Detalle: pepito is not defined","timestamp":"2023-11-28T00:38:34.727Z"}
+{"level":"error","message":"Faltan datos en la solicitud","timestamp":"2023-11-28T23:23:06.758Z"}
