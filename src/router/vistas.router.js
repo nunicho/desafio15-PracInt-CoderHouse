@@ -532,8 +532,6 @@ router.post('/logs', (req, res) =>{
 
 
 
-
-
 router.get("/loggerTest", (req, res) => {
   const environment = config.MODO;
   const logFileName =
@@ -574,6 +572,11 @@ router.get("/loggerTest", (req, res) => {
   }
 });
 
+//---------------------------------------------------------------- RUTA RECUPERAR CONTRASEÑA---------------//
+
+router.get("/forgotPassword", (req, res) => {
+  res.render("forgotPassword"); 
+});
 
 module.exports = router;
 
