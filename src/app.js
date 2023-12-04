@@ -26,6 +26,11 @@ const ConnectMongo = require("connect-mongo");
 const inicializaPassport = require("./config/passport.config.js");
 const passport = require("passport");
 
+
+// NODEMAILER y JWT
+const nodemailer = require("nodemailer");
+const jwt = require("jsonwebtoken");
+
 // HANDLEBARS - importación
 const handlebars = require("express-handlebars");
 
@@ -66,6 +71,7 @@ app.use(passport.session());
 
 // PARA EL MANEJO DE COOKIES
 app.use(cookieParser());
+
 
 // Routers de FileSystem (FS)
 const FSproductsRouter = require("./dao/fileSystem/routes/FSproducts.router.js");
@@ -125,6 +131,8 @@ const hbs = handlebars.create({
     },
   },
 });
+//
+
 
 // WEBSOCKET Y CHAT
 app.engine("handlebars", hbs.engine);
