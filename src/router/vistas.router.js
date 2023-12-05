@@ -575,8 +575,19 @@ router.get("/loggerTest", (req, res) => {
 //---------------------------------------------------------------- RUTA RECUPERAR CONTRASEÑA---------------//
 
 router.get("/forgotPassword", (req, res) => {
-  res.render("forgotPassword"); 
+  res.render("forgotPassword");
 });
+
+router.get("/resetPassword", (req, res) => {
+  const token = req.query.token;
+  console.log(`El token es ${token}`);
+  console.log(`El token reset token es ${req.session.resetToken}`)
+  if (!token || token !== req.session.resetToken) {
+    return res.status(400).send("Token inválido o caducado");
+  }
+  res.render("resetPassword", { token });
+});
+
 
 module.exports = router;
 

@@ -30,6 +30,7 @@ const passport = require("passport");
 // NODEMAILER y JWT
 const nodemailer = require("nodemailer");
 const jwt = require("jsonwebtoken");
+const async = require("async");
 
 // HANDLEBARS - importación
 const handlebars = require("express-handlebars");
@@ -142,55 +143,42 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-const createResetToken = (email) => {
-  return jwt.sign({ email }, "secreto_para_reset", { expiresIn: "1h" });
-};
-
-const sendResetEmail = (email, token) => {
-  const resetLink = `http://localhost:3050/resetPassword?token=${token}`;
-  console.log(`El reset link es${resetLink}`);
-  const mailOptions = {
-    from: "noresponder-ferreteriaeltornillo@gmail.com",
-    to: email,
-    subject: "Restablecimiento de contraseña",
-    html: `Haga clic en el siguiente enlace para restablecer su contraseña: <a href="${resetLink}">${resetLink}</a>`,
+const createResetToken = (user) => {
+  const tokenObject = {
+    email: user.email,
+    id: user._id,
   };
-
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.error(error);
-    } else {
-      console.log(
-        "Correo de restablecimiento de contraseña enviado: " + info.response
-      );
-    }
-  });
+  const secret = user._id + "_" + user.email + "_" + new Date().getTime();
+  return jwt.sign(tokenObject, secret);
 };
 
-app.get("/resetPassword", (req, res) => {
-  const token = req.query.token;
-  console.log(`El token es ${token}`);
-  if (!token || token !== req.session.resetToken) {
-    return res.status(400).send("Token inválido o caducado");
-  }
-
-  // Renderizar la página de restablecimiento de contraseña
-  res.render("resetPassword", { token });
-});
-
-app.post("/resetPassword", async (req, res) => {
-  const { email } = req.body;
-  console.log(`El email pasado es: ${email}`)
+app.post("/forgotPassword", async (req, res) => {
   try {
+    const { email } = req.body;
     const user = await UsersController.getUserByEmail(email);
-    console.log(`El user es ${user}`)
+
     if (!user) {
       return res.status(404).send("Usuario no encontrado");
     }
 
-    const resetToken = createResetToken(email);
-    req.session.resetToken = resetToken; // Almacenar el token en la sesión
-    sendResetEmail(email, resetToken);
+    const resetToken = createResetToken(user);
+    user.reset_password_token = resetToken;
+    user.reset_password_expires = Date.now() + 86400000; // 24 horas de validez
+
+    await user.save();
+
+    // Almacena el token completo en la sesión
+    req.session.resetToken = resetToken;
+
+    const resetLink = `http://localhost:3050/resetPassword?token=${resetToken}`;
+    const mailOptions = {
+      from: "noresponder-ferreteriaeltornillo@gmail.com",
+      to: user.email,
+      subject: "Restablecimiento de contraseña",
+      html: `Haga clic en el siguiente enlace para restablecer su contraseña: <a href="${resetLink}">${resetLink}</a>`,
+    };
+
+    await transporter.sendMail(mailOptions);
 
     res
       .status(200)
