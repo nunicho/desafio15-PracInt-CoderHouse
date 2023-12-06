@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const UsersRepository = require("../dao/repository/users.repository")
 
 const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
 
 const CustomError = require("../utils/customError.js");
 const tiposDeError = require("../utils/tiposDeError.js");
@@ -118,8 +119,10 @@ const updatePassword = async (req, res) => {
     //   );
     // }
 
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
 
-    user.password = newPassword;
+    // Actualizar la contraseña del usuario con la contraseña hasheada
+    user.password = hashedPassword;
     user.reset_password_token = null;
     user.reset_password_expires = null;
 
