@@ -162,7 +162,7 @@ router.get("/DBproducts", auth, authRol(["user"]), async (req, res) => {
   }
 });
 
-router.get("/DBproducts-Premium", auth, authRol(["Premium"]), async (req, res) => {
+router.get("/DBproducts-Premium", auth, authRol(["premium"]), async (req, res) => {
   try {
     const productos = await productosController.listarProductos(req, res);
     res.header("Content-type", "text/html");

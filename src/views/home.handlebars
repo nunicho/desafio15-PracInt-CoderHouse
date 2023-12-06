@@ -26,6 +26,14 @@
               <a href="/chat">Chat- Con Handlebars</a>
         </div>
     {{/ifEquals}}
+        {{#ifEquals usuario.role 'premium'}}
+        <div>
+             <a href="/DBproducts-Premium">Productos</a>
+        </div>
+        <div>
+              <a href="/chat">Chat- Con Handlebars</a>
+        </div>
+    {{/ifEquals}}
 
 
   <label for="cartId">ID del Carrito:</label>

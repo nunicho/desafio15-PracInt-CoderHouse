@@ -174,3 +174,10 @@
 {"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-06T20:58:46.918Z"}
 {"level":"info","message":"Inicio de sesión exitoso - Usuario: mauricio@gmail.com","timestamp":"2023-12-06T20:58:58.838Z"}
 {"level":"info","message":"Acceso exitoso al perfil - Usuario: mauricio@gmail.com","timestamp":"2023-12-06T21:04:33.580Z"}
+{"level":"info","message":"Logout exitoso - Mail: mauricio@gmail.com ","timestamp":"2023-12-06T21:07:44.311Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-06T21:07:44.565Z"}
+{"level":"info","message":"Acceso exitoso a la página de administrador","timestamp":"2023-12-06T21:07:56.227Z"}
+{"level":"info","message":"Inicio de sesión exitoso como administrador - Administrador: adminCoderPrueba@coder.com","timestamp":"2023-12-06T21:08:05.018Z"}
+{"level":"info","message":"Acceso exitoso al perfil - Usuario: adminCoderPrueba@coder.com","timestamp":"2023-12-06T21:08:36.595Z"}
+{"level":"info","message":"Logout exitoso - Mail: adminCoderPrueba@coder.com ","timestamp":"2023-12-06T21:08:40.304Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-06T21:08:40.522Z"}
