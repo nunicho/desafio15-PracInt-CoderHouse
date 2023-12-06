@@ -2,6 +2,9 @@
 const mongoose = require("mongoose");
 const UsersRepository = require("../dao/repository/users.repository")
 
+// DOTENV
+const config = require("../config/config.js");
+
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
@@ -92,20 +95,15 @@ const deleteUser = async (req, res) => {
   }
 };
 
-const secret = "palabra-secreta";
+const secret = config.SECRET;
 
 
 const updatePassword = async (req, res) => {
   try {
     const token = req.params.token;
-    const newPassword = req.body.newPassword;
-    console.log(`La New password es: ${newPassword}`)
-    // Decodificar el token para obtener la información necesaria
+    const newPassword = req.body.newPassword;   
     const decodedToken = jwt.verify(token, secret); // Utiliza la misma palabra secreta
-
-    // Obtener el usuario por ID del token
     const user = await UsersRepository.getUserByEmail(decodedToken.email);
-    console.log(`decodedToken.email es igual a  : ${decodedToken.email}`);
     // if (
     //   !user ||
     //   user.reset_password_token !== token ||

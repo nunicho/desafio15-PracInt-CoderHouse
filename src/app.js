@@ -138,12 +138,12 @@ const UsersController= require("./controllers/users.controller.js")
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "conta.alonso@gmail.com", // Coloca tu dirección de correo aquí
-    pass: "wcotbsufizlbkjug", // Coloca tu contraseña aquí
+    user: config.SMTP_USER, // Coloca tu dirección de correo aquí
+    pass: config.SMTP_PASSWORD, // Coloca tu contraseña aquí
   },
 });
 
-const secret = "palabra-secreta";
+const secret = config.SECRET;
 
 const createResetToken = (user) => {
   const tokenObject = {
@@ -173,7 +173,7 @@ app.post("/forgotPassword", async (req, res) => {
     // Almacena el token completo en la sesión
     req.session.resetToken = resetToken;
 
-    const resetLink = `http://localhost:3050/resetPassword?token=${resetToken}`;
+    const resetLink = `http://localhost:${config.PORT}/resetPassword?token=${resetToken}`;
     const mailOptions = {
       from: "noresponder-ferreteriaeltornillo@gmail.com",
       to: user.email,
@@ -195,79 +195,6 @@ app.post("/forgotPassword", async (req, res) => {
     res.status(500).send("Error interno del servidor");
   }
 });
-
-/*
-const UsersController= require("./controllers/users.controller.js")
-// Configuración del transporte de nodemailer (usando un servicio de prueba)
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: "conta.alonso@gmail.com", // Coloca tu dirección de correo aquí
-    pass: "wcotbsufizlbkjug", // Coloca tu contraseña aquí
-  },
-});
-
-const createResetToken = (email) => {
-  return jwt.sign({ email }, "secreto_para_reset", { expiresIn: "1h" });
-};
-
-const sendResetEmail = (email, token) => {
-  const resetLink = `http://localhost:3050/resetPassword?token=${token}`;
-  console.log(`El reset link es${resetLink}`);
-  const mailOptions = {
-    from: "noresponder-ferreteriaeltornillo@gmail.com",
-    to: email,
-    subject: "Restablecimiento de contraseña",
-    html: `Haga clic en el siguiente enlace para restablecer su contraseña: <a href="${resetLink}">${resetLink}</a>`,
-  };
-
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.error(error);
-    } else {
-      console.log(
-        "Correo de restablecimiento de contraseña enviado: " + info.response
-      );
-    }
-  });
-};
-
-app.get("/resetPassword", (req, res) => {
-  const token = req.query.token;
-  console.log(`El token es ${token}`);
-  if (!token || token !== req.session.resetToken) {
-    return res.status(400).send("Token inválido o caducado");
-  }
-
-  // Renderizar la página de restablecimiento de contraseña
-  res.render("resetPassword", { token });
-});
-
-app.post("/resetPassword", async (req, res) => {
-  const { email } = req.body;
-  console.log(`El email pasado es: ${email}`)
-  try {
-    const user = await UsersController.getUserByEmail(email);
-    console.log(`El user es ${user}`)
-    if (!user) {
-      return res.status(404).send("Usuario no encontrado");
-    }
-
-    const resetToken = createResetToken(email);
-    req.session.resetToken = resetToken; // Almacenar el token en la sesión
-    sendResetEmail(email, resetToken);
-
-    res
-      .status(200)
-      .send(
-        "Se ha enviado un correo con las instrucciones para restablecer la contraseña."
-      );
-  } catch (error) {
-    console.error(error);
-    res.status(500).send("Error interno del servidor");
-  }
-});
-*/
 
 
 // WEBSOCKET Y CHAT
