@@ -2,6 +2,7 @@
 const mongoose = require("mongoose");
 const UsersRepository = require("../dao/repository/users.repository")
 
+const jwt = require("jsonwebtoken");
 
 const CustomError = require("../utils/customError.js");
 const tiposDeError = require("../utils/tiposDeError.js");
@@ -90,7 +91,47 @@ const deleteUser = async (req, res) => {
   }
 };
 
+const jwtSecret = "jwtSecret";
 
+
+const updatePassword = async (req, res) => {
+  try {
+    const token = req.params.token;
+    const newPassword = req.body.newPassword;
+
+    // Decodificar el token para obtener la información necesaria
+    const decodedToken = jwt.verify(token, "jwtSecret"); // Utiliza la misma palabra secreta
+
+    // Obtener el usuario por ID del token
+    const user = await UsersRepository.getUserById(decodedToken.id);
+
+    if (
+      !user ||
+      user.reset_password_token !== token ||
+      user.reset_password_expires < Date.now()
+    ) {
+      throw new CustomError(
+        "TOKEN_INVALIDO",
+        "Token inválido o caducado",
+        tiposDeError.ERROR_NO_AUTORIZADO,
+        "El token proporcionado no es válido o ha caducado."
+      );
+    }
+
+    // Actualizar la contraseña del usuario
+    user.password = newPassword;
+    user.reset_password_token = null;
+    user.reset_password_expires = null;
+
+    await user.save();
+
+    res.status(200).send("Contraseña actualizada correctamente.");
+  } catch (error) {
+    // Manejar errores y enviar la respuesta correspondiente
+    console.error(error);
+    res.status(400).send("Error al actualizar la contraseña.");
+  }
+};
 
 
 module.exports = {
@@ -99,7 +140,8 @@ module.exports = {
   getUsers,
   updateUser,
   deleteUser,
- };
+  updatePassword,
+};
 
 
 /*

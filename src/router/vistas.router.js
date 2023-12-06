@@ -3,6 +3,7 @@ const router = Router();
 const arrayProducts = require("../archivos/productos.json");
 const productosController = require("../controllers/productos.controller.js");
 const carritosController = require("../controllers/carritos.controller.js");
+const UsersController = require("../controllers/users.controller.js");
 const winston = require("winston");
 const path = require("path");
 const fs = require("fs");
@@ -587,6 +588,8 @@ router.get("/resetPassword", (req, res) => {
   }
   res.render("resetPassword", { token });
 });
+
+router.post("/updatePassword/:token", UsersController.updatePassword);
 
 
 module.exports = router;
