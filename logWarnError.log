@@ -181,3 +181,56 @@
 {"level":"info","message":"Acceso exitoso al perfil - Usuario: adminCoderPrueba@coder.com","timestamp":"2023-12-06T21:08:36.595Z"}
 {"level":"info","message":"Logout exitoso - Mail: adminCoderPrueba@coder.com ","timestamp":"2023-12-06T21:08:40.304Z"}
 {"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-06T21:08:40.522Z"}
+{"level":"info","message":"Inicio de sesión exitoso - Usuario: premium@gmail.com","timestamp":"2023-12-06T21:13:27.040Z"}
+{"level":"info","message":"Logout exitoso - Mail: premium@gmail.com ","timestamp":"2023-12-06T21:14:55.560Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-06T21:14:55.779Z"}
+{"level":"info","message":"Inicio de sesión exitoso - Usuario: premium@gmail.com","timestamp":"2023-12-06T21:15:04.949Z"}
+{"level":"info","message":"Logout exitoso - Mail: premium@gmail.com ","timestamp":"2023-12-06T21:15:31.150Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-06T21:15:31.343Z"}
+{"level":"info","message":"Inicio de sesión exitoso - Usuario: user@gmail.com","timestamp":"2023-12-06T21:15:40.017Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T21:15:42.203Z"}
+{"level":"info","message":"Logout exitoso - Mail: user@gmail.com ","timestamp":"2023-12-06T21:15:50.273Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-06T21:15:50.493Z"}
+{"level":"info","message":"Inicio de sesión exitoso - Usuario: premium@gmail.com","timestamp":"2023-12-06T21:16:18.844Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T21:16:20.997Z"}
+{"level":"info","message":"Logout exitoso - Mail: premium@gmail.com ","timestamp":"2023-12-06T21:17:47.221Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-06T21:17:47.422Z"}
+{"level":"info","message":"Acceso exitoso a la página de administrador","timestamp":"2023-12-06T21:18:31.555Z"}
+{"level":"info","message":"Inicio de sesión exitoso como administrador - Administrador: adminCoderPrueba@coder.com","timestamp":"2023-12-06T21:18:52.649Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-06T21:18:53.019Z"}
+{"level":"info","message":"Acceso exitoso a la página de administrador","timestamp":"2023-12-06T21:18:56.503Z"}
+{"level":"info","message":"Inicio de sesión exitoso como administrador - Administrador: adminCoderPrueba@coder.com","timestamp":"2023-12-06T21:19:11.132Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-12-06T21:19:13.568Z"}
+{"level":"info","message":"Logout exitoso - Mail: adminCoderPrueba@coder.com ","timestamp":"2023-12-06T21:19:55.051Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-06T21:19:55.236Z"}
+{"level":"info","message":"Inicio de sesión exitoso - Usuario: premium@gmail.com","timestamp":"2023-12-06T21:28:12.385Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T21:28:15.047Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T21:29:17.745Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T21:29:22.787Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T21:29:28.224Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T21:30:00.270Z"}
+{"level":"info","message":"Acceso exitoso al perfil - Usuario: premium@gmail.com","timestamp":"2023-12-06T21:30:29.114Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T21:30:34.211Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T21:31:51.302Z"}
+{"level":"info","message":"Logout exitoso - Mail: premium@gmail.com ","timestamp":"2023-12-06T21:32:05.257Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-06T21:32:05.448Z"}
+{"level":"info","message":"Inicio de sesión exitoso - Usuario: premium@gmail.com","timestamp":"2023-12-06T21:32:14.061Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T21:32:16.241Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T21:33:00.515Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T21:33:19.993Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T21:33:23.723Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T21:33:37.887Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T21:33:49.265Z"}
+{"level":"info","message":"Logout exitoso - Mail: premium@gmail.com ","timestamp":"2023-12-06T21:33:56.696Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-06T21:33:56.891Z"}
+{"level":"info","message":"Inicio de sesión exitoso - Usuario: user@gmail.com","timestamp":"2023-12-06T21:34:05.408Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T21:34:07.648Z"}
+{"level":"info","message":"Logout exitoso - Mail: user@gmail.com ","timestamp":"2023-12-06T21:34:23.569Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-06T21:34:23.775Z"}
+{"level":"info","message":"Acceso exitoso a la página de administrador","timestamp":"2023-12-06T21:34:25.812Z"}
+{"level":"info","message":"Inicio de sesión exitoso como administrador - Administrador: adminCoderPrueba@coder.com","timestamp":"2023-12-06T21:34:39.751Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-12-06T21:34:42.386Z"}
+{"level":"info","message":"Logout exitoso - Mail: adminCoderPrueba@coder.com ","timestamp":"2023-12-06T21:37:07.425Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-06T21:37:07.642Z"}
+{"level":"info","message":"Inicio de sesión exitoso - Usuario: premium@gmail.com","timestamp":"2023-12-06T21:37:21.829Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T21:37:24.112Z"}

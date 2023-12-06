@@ -166,7 +166,7 @@ router.get("/DBproducts-Premium", auth, authRol(["premium"]), async (req, res) =
   try {
     const productos = await productosController.listarProductos(req, res);
     res.header("Content-type", "text/html");
-    res.status(200).render("DBproducts", {
+    res.status(200).render("DBproducts-Premium", {
       productos: productos.docs,
       hasProducts: productos.docs.length > 0,
       // activeProduct: true,

@@ -1,5 +1,7 @@
+<button id="agregarProducto">Agregar Producto</button>
 <span><a  href="/">Regresar</a></span> <span><button id="printButton">Imprimir Lista</button></span>
 <br/>
+
 
 <div id="carritoContainer">
   <h2>Carrito de Compras</h2>
@@ -11,9 +13,9 @@
   <button id="finalizarCompra">Finalizar Compra</button>
 </div>
 
-<h1>Lista de productos en Base de Datos</h1>
+<h1>Lista de productos en Base de Datos PREMIUM</h1>
 
-<form action="/DBproducts" method="GET" id="filtroForm">
+<form action="/DBproducts-Premium" method="GET" id="filtroForm">
   <label for="filtro">Filtrar por nombre:</label>
   <input type="text" id="filtro" name="filtro" value="{{filtro}}" /> <!-- Establece el valor del filtro -->
   <label for="codeFilter">Filtrar por código:</label>
@@ -60,21 +62,21 @@
     <h1> ¡No se encontraron productos! </h1>
     {{/if}}
 <br>
-  <a href="/DBProducts?pagina=1">Pág. 1</a>
+  <a href="/DBProducts-Premium?pagina=1">Pág. 1</a>
 
   {{#if hasPrevPage}}
-      <a href="/DBProducts?pagina={{prevPage}}">Prev. Pág</a>
+      <a href="/DBProducts-Premium?pagina={{prevPage}}">Prev. Pág</a>
   {{else}}
   <span>Prev. Pág.</span>
   {{/if}}
 
   {{#if hasNextPage}}
-      <a href="/DBProducts?pagina={{nextPage}}">Next. Pág</a>
+      <a href="/DBProducts-Premium?pagina={{nextPage}}">Next. Pág</a>
   {{else}}
   <span>Next. Pág.</span>
   {{/if}}
 
-    <a href="/DBProducts?pagina={{totalPages}}">Ult. página</a>
+    <a href="/DBProducts-Premium?pagina={{totalPages}}">Ult. página</a>
  </div> 
 
 <!-- Ventana modal para AGREGAR PRODUCTOS -->
