@@ -91,34 +91,34 @@ const deleteUser = async (req, res) => {
   }
 };
 
-const jwtSecret = "jwtSecret";
+const secret = "palabra-secreta";
 
 
 const updatePassword = async (req, res) => {
   try {
     const token = req.params.token;
     const newPassword = req.body.newPassword;
-
+    console.log(`La New password es: ${newPassword}`)
     // Decodificar el token para obtener la información necesaria
-    const decodedToken = jwt.verify(token, "jwtSecret"); // Utiliza la misma palabra secreta
+    const decodedToken = jwt.verify(token, secret); // Utiliza la misma palabra secreta
 
     // Obtener el usuario por ID del token
-    const user = await UsersRepository.getUserById(decodedToken.id);
+    const user = await UsersRepository.getUserByEmail(decodedToken.email);
+    console.log(`decodedToken.email es igual a  : ${decodedToken.email}`);
+    // if (
+    //   !user ||
+    //   user.reset_password_token !== token ||
+    //   user.reset_password_expires < Date.now()
+    // ) {
+    //   throw new CustomError(
+    //     "TOKEN_INVALIDO",
+    //     "Token inválido o caducado",
+    //     tiposDeError.ERROR_NO_AUTORIZADO,
+    //     "El token proporcionado no es válido o ha caducado."
+    //   );
+    // }
 
-    if (
-      !user ||
-      user.reset_password_token !== token ||
-      user.reset_password_expires < Date.now()
-    ) {
-      throw new CustomError(
-        "TOKEN_INVALIDO",
-        "Token inválido o caducado",
-        tiposDeError.ERROR_NO_AUTORIZADO,
-        "El token proporcionado no es válido o ha caducado."
-      );
-    }
 
-    // Actualizar la contraseña del usuario
     user.password = newPassword;
     user.reset_password_token = null;
     user.reset_password_expires = null;

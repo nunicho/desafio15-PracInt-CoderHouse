@@ -143,14 +143,14 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-const jwtSecret = "jwtSecret";
+const secret = "palabra-secreta";
 
 const createResetToken = (user) => {
   const tokenObject = {
     email: user.email,
     id: user._id,
   };
-  const secret = user._id + "_" + user.email + "_" + new Date().getTime();
+  //const secret = user._id + "_" + user.email + "_" + new Date().getTime();
  const resetToken = jwt.sign(tokenObject, secret);
  return resetToken;
 };
@@ -164,7 +164,7 @@ app.post("/forgotPassword", async (req, res) => {
       return res.status(404).send("Usuario no encontrado");
     }
 
-    const resetToken = createResetToken(user, jwtSecret);
+    const resetToken = createResetToken(user, secret);
     user.reset_password_token = resetToken;
     user.reset_password_expires = Date.now() + 86400000; // 24 horas de validez
 
