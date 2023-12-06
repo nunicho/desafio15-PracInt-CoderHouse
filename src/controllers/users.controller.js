@@ -100,21 +100,20 @@ const secret = config.SECRET;
 
 const updatePassword = async (req, res) => {
   try {
-  const token = req.params.token;
-  const newPassword = req.body.newPassword;
+    const token = req.params.token;
+    const newPassword = req.body.newPassword;
+    let errorMessage = null;
 
-  // Decodificar el token para obtener la información necesaria
-  const decodedToken = jwt.verify(token, secret);
+    // Decodificar el token para obtener la información necesaria
+    const decodedToken = jwt.verify(token, secret);
 
-  // Verificar si el token ha expirado
-  if (decodedToken.exp < Date.now() / 1000) {
-    throw new CustomError(
-      "TOKEN_EXPIRADO",
-      "Token caducado",
-      tiposDeError.ERROR_NO_AUTORIZADO,
-      "El token proporcionado ha caducado."
-    );
-  }
+    // Verificar si el token ha expirado
+if (decodedToken.exp < Date.now() / 1000) {
+      // Almacenar el mensaje de error antes de la redirección
+      errorMessage = "Error al actualizar la contraseña. - Token expirado";
+      // Redirigir a forgotPassword si el token ha expirado
+      return res.redirect('/forgotPassword');
+    }
     const user = await UsersRepository.getUserByEmail(decodedToken.email);
     // if (
     //   !user ||
@@ -129,9 +128,19 @@ const updatePassword = async (req, res) => {
     //   );
     // }
 
+    const isSamePassword = await bcrypt.compare(newPassword, user.password);
+
+    if (isSamePassword) {
+      throw new CustomError(
+        "CONTRASENA_ANTIGUA",
+        "Contraseña igual a la actual",
+        tiposDeError.ERROR_NO_AUTORIZADO,
+        "La nueva contraseña no puede ser igual a la contraseña actual."
+      );
+    }
+
     const hashedPassword = await bcrypt.hash(newPassword, 10);
 
-    
     user.password = hashedPassword;
     user.reset_password_token = null;
     user.reset_password_expires = null;
@@ -144,9 +153,18 @@ const updatePassword = async (req, res) => {
     // });
     res.status(200).send("Contraseña actualizada correctamente.");
   } catch (error) {
-    
-    console.error(error);
-    res.status(400).send("Error al actualizar la contraseña. - Token expirado");
+    if (error.name === "TOKEN_EXPIRADO") {
+      res
+        .status(400)
+        .send("Error al actualizar la contraseña. - Token expirado");
+    } else if (error.name === "CONTRASENA_ANTIGUA") {
+      res
+        .status(400)
+        .send("La nueva contraseña no puede ser igual a la contraseña actual.");
+    } else {
+      console.error(error);
+      res.status(400).send("Error al actualizar la contraseña.");
+    }
   }
 };
 
