@@ -29,7 +29,7 @@ const inicializaPassport = () => {
       },
       async (req, username, password, done) => {
         try {
-          let { first_name, last_name, email, age, password } = req.body;
+          let { first_name, last_name, email, age, password, role } = req.body;
 
           if (!first_name || !last_name || !age || !email || !password) {
             return done(null, false, {
@@ -53,15 +53,15 @@ const inicializaPassport = () => {
 
           const cartId = generateCustomCartId();
 
-          let usuario = await usersController.createUser({
-            first_name,
-            last_name,
-            email,
-            age,
-            password: util.generaHash(password),
-            cart: cartId,
-            role: "user",
-          });
+       let usuario = await usersController.createUser({
+         first_name,
+         last_name,
+         email,
+         age,
+         password: util.generaHash(password),
+         cart: cartId,
+         role,  
+       });
 
           return done(null, usuario);
         } catch (error) {

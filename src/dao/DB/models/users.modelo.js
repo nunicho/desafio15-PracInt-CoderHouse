@@ -11,9 +11,9 @@ const modeloUsers = mongoose.model(
       unique: true,
     },
     age: Number,
-    password: String,    
-    cart:String,
-    role:String,
+    password: String,
+    cart: String,
+    role: { type: String, enum: ["user", "premium"], default: "user" },
   })
 );
 

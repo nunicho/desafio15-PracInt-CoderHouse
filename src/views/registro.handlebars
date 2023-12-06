@@ -11,7 +11,13 @@
     <input type="number" name="age" placeholder="Edad">
     <input type="email" name="email" placeholder="Email">   
     <input type="password" name="password" placeholder="Password">  
+    <label for="role">Tipo de usuario:</label>
+    <select name="role">
+      <option value="user">Usuario</option>
+      <option value="premium">Premium</option>
+    </select>
+
     <input type="submit" value="Registrar">
 </form>
-   <br>
-    {{>menu}}
+<br>
+{{>menu}}
