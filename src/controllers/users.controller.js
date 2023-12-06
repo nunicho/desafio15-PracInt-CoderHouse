@@ -121,16 +121,20 @@ const updatePassword = async (req, res) => {
 
     const hashedPassword = await bcrypt.hash(newPassword, 10);
 
-    // Actualizar la contraseña del usuario con la contraseña hasheada
+    
     user.password = hashedPassword;
     user.reset_password_token = null;
     user.reset_password_expires = null;
 
     await user.save();
-
+    // res.status(200).render("login", {
+    //   successPasswordMessage:
+    //     "Contraseña actualizada correctamente.",
+    //   estilo: "login.css",
+    // });
     res.status(200).send("Contraseña actualizada correctamente.");
   } catch (error) {
-    // Manejar errores y enviar la respuesta correspondiente
+    
     console.error(error);
     res.status(400).send("Error al actualizar la contraseña.");
   }

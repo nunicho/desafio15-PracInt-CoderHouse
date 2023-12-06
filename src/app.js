@@ -184,10 +184,12 @@ app.post("/forgotPassword", async (req, res) => {
     await transporter.sendMail(mailOptions);
 
     res
-      .status(200)
-      .send(
-        "Se ha enviado un correo con las instrucciones para restablecer la contraseña."
-      );
+   res.status(200).render("login", {
+     successPasswordMessage:
+       "Se ha enviado un correo con las instrucciones para restablecer la contraseña.",
+     estilo: "login.css",
+   });
+
   } catch (error) {
     console.error(error);
     res.status(500).send("Error interno del servidor");
@@ -273,7 +275,8 @@ app.engine("handlebars", hbs.engine);
 app.set("views", __dirname + "/views");
 app.set("view engine", "handlebars");
 
-app.use(express.static(__dirname + "/public"));
+//app.use(express.static(__dirname + "/public"));
+app.use(express.static(path.join(__dirname, "public")));
 
 const serverExpress = app.listen(PORT, () => {
   console.log(`Server escuchando en puerto ${PORT}`);

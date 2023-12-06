@@ -10,6 +10,10 @@
 
 <form action="/api/sessions/login" method="POST">
 
+{{#if successPasswordMessage}}
+  <div class="success">{{successPasswordMessage}}</div>
+{{/if}}
+
 
 {{#if error}}
   <div class="error">{{errorDetalle}}</div>
