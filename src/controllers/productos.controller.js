@@ -129,7 +129,10 @@ const crearProducto = async (req, res) => {
       "El código proporcionado ya está en uso por otro producto."
     );
   }
-
+    if (!producto.owner) {
+      producto.owner = "admin";
+    }
+    
     const productoInsertado = await ProductosRepository.crearProducto(producto);
 
     res.locals.nombreProducto = producto.title;

@@ -39,6 +39,9 @@ class ProductosRepository {
           `El código ${producto.code} ya está siendo usado por otro producto.`
         );
       }
+       if (!producto.owner) {
+         producto.owner = "admin";
+       }
 
       return await ProductosMongoDao.crearProducto(producto);
     } catch (error) {

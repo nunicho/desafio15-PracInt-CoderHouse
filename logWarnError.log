@@ -234,3 +234,20 @@
 {"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-06T21:37:07.642Z"}
 {"level":"info","message":"Inicio de sesión exitoso - Usuario: premium@gmail.com","timestamp":"2023-12-06T21:37:21.829Z"}
 {"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T21:37:24.112Z"}
+{"level":"info","message":"Acceso exitoso al perfil - Usuario: premium@gmail.com","timestamp":"2023-12-06T21:38:18.223Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T21:38:23.173Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T21:44:34.897Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T21:44:39.443Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T21:44:45.159Z"}
+{"level":"info","message":"Producto creado correctamente - Id: TA-18013 Nombre: PRUEBA","timestamp":"2023-12-06T21:45:01.307Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T21:45:06.209Z"}
+{"level":"info","message":"Acceso exitoso al perfil - Usuario: premium@gmail.com","timestamp":"2023-12-06T22:14:04.273Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T22:14:08.996Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T22:15:47.111Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T22:17:43.178Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T22:17:48.404Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T22:18:19.257Z"}
+{"level":"info","message":"Producto creado correctamente - Id: 123 Nombre: PUEBA 2","timestamp":"2023-12-06T22:18:42.542Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T22:36:52.832Z"}
+{"level":"info","message":"Producto creado correctamente - Id: 233f Nombre: herramienta generica","timestamp":"2023-12-06T22:37:39.263Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-06T22:40:04.500Z"}
