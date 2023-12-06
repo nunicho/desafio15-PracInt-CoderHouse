@@ -40,23 +40,23 @@ const auth2 = (req, res, next) => {
 
 
 
-const authRol = (roles) => {
-  return (req, res, next) => {
-    const user = req.session.usuario;
+  const authRol = (roles) => {
+    return (req, res, next) => {
+      const user = req.session.usuario;
 
-    if (!user || !roles.includes(user.role)) {
-       throw new CustomError(
-         "ERROR_DATOS",
-         "No tienes permisos para acceder a esta ruta",
-         tiposDeError.ERROR_AUTORIZACION,
-         "No tienes permisos para acceder a esta ruta"
-       );
-    }
+      if (!user || !roles.includes(user.role)) {
+        throw new CustomError(
+          "ERROR_DATOS",
+          "No tienes permisos para acceder a esta ruta",
+          tiposDeError.ERROR_AUTORIZACION,
+          "No tienes permisos para acceder a esta ruta"
+        );
+      }
 
-    next();
+      next();
+    };
   };
-};
- 
+  
 router.use((req, res, next) => {
   res.locals.usuario = req.session.usuario; // Pasar el usuario a res.locals
   next();
@@ -162,6 +162,35 @@ router.get("/DBproducts", auth, authRol(["user"]), async (req, res) => {
   }
 });
 
+router.get("/DBproducts-Premium", auth, authRol(["Premium"]), async (req, res) => {
+  try {
+    const productos = await productosController.listarProductos(req, res);
+    res.header("Content-type", "text/html");
+    res.status(200).render("DBproducts", {
+      productos: productos.docs,
+      hasProducts: productos.docs.length > 0,
+      // activeProduct: true,
+      status: productos.docs.status,
+      pageTitle: "Catálogo de",
+      estilo: "productsStyles.css",
+      totalPages: productos.totalPages,
+      hasPrevPage: productos.hasPrevPage,
+      hasNextPage: productos.hasNextPage,
+      prevPage: productos.prevPage,
+      nextPage: productos.nextPage,
+      filtro: req.query.filtro || "",
+      codeFilter: req.query.codeFilter || "",
+      sort: req.query.sort || "",
+      limit: req.query.limit || 10,
+    });
+    req.logger.info(`Acceso exitoso a productos - Usuario`);
+  } catch (error) {
+    res.status(500).json({ error: "Error interno del servidor" });
+    req.logger.error(
+      `Error al acceder a productos - Detalle: ${error.message}`
+    );
+  }
+});
 
 router.get(
   "/DBproducts-Admin",
