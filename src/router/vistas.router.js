@@ -340,6 +340,73 @@ router
     }
   });
 
+
+
+  router.delete(
+    "/eliminarProducto-Premium/:id",
+    auth,
+    productosController.borrarProducto,
+    (req, res) => {
+      try {
+        res.header("Content-type", "text/html");
+        const nombreProducto = res.locals.nombreProducto;
+        if (nombreProducto) {
+          req.logger.info(`Producto "${nombreProducto}" borrado exitosamente`);
+        } else {
+          req.logger.warn("No se pudo obtener el nombre del producto borrado.");
+        }
+        //res.status(200).render("DBproducts-Admin");
+      } catch (error) {
+        req.logger.error(
+          `Error al borrar producto - Detalle: ${error.message}`
+        );
+      }
+    }
+  );
+
+  router
+    .route("/editarProducto-Premium/:id")
+    .all(auth, productosController.obtenerProducto)
+    .get((req, res) => {
+      const productoDB = res.locals.productoDB;
+      if (!productoDB) {
+        throw new CustomError(
+          "ERROR_DATOS",
+          "Producto no encontrado",
+          tiposDeError.PRODUCTO_NO_ENCONTRADO,
+          "Producto no encontrado"
+        );
+      }
+      res.header("Content-type", "text/html");
+      res.status(200).render("editarProducto", {
+        productoDB,
+        estilo: "editarProducto.css",
+      });
+    })
+    .post(async (req, res, next) => {
+      try {
+        await productosController.editarProducto(req, res, next);
+
+        const { redireccionar, productoEditado, error } = res.locals;
+
+        if (redireccionar) {
+          req.logger.info(
+            `Producto de nombre ${productoEditado.title} editado correctamente`
+          );
+          res.redirect("/DBProducts-Premium");
+        } else {
+          if (error) {
+            req.logger.error(
+              `Error al editar producto de nombre ${productoEditado.title}`
+            );
+            res.status(error.codigo).send(error.detalle);
+          }
+        }
+      } catch (error) {
+        req.logger.error(`Error al editar producto`);
+        res.status(500).send("Error interno del servidor");
+      }
+    });
   
 //---------------------------------------------------------------- RUTAS PARA CARRITOS--------------- //
 
