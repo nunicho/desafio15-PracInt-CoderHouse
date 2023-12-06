@@ -150,9 +150,11 @@ const createResetToken = (user) => {
     email: user.email,
     id: user._id,
   };
-  //const secret = user._id + "_" + user.email + "_" + new Date().getTime();
- const resetToken = jwt.sign(tokenObject, secret);
- return resetToken;
+  const expirationTime = 3600;
+  const resetToken = jwt.sign(tokenObject, secret, {
+    expiresIn: expirationTime,
+  });
+  return resetToken;
 };
 
 app.post("/forgotPassword", async (req, res) => {
@@ -166,7 +168,7 @@ app.post("/forgotPassword", async (req, res) => {
 
     const resetToken = createResetToken(user, secret);
     user.reset_password_token = resetToken;
-    user.reset_password_expires = Date.now() + 86400000; // 24 horas de validez
+    user.reset_password_expires = Date.now() + 3600000; 
 
     await user.save();
 

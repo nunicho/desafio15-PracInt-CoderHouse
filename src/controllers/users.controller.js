@@ -100,9 +100,21 @@ const secret = config.SECRET;
 
 const updatePassword = async (req, res) => {
   try {
-    const token = req.params.token;
-    const newPassword = req.body.newPassword;   
-    const decodedToken = jwt.verify(token, secret); // Utiliza la misma palabra secreta
+  const token = req.params.token;
+  const newPassword = req.body.newPassword;
+
+  // Decodificar el token para obtener la información necesaria
+  const decodedToken = jwt.verify(token, secret);
+
+  // Verificar si el token ha expirado
+  if (decodedToken.exp < Date.now() / 1000) {
+    throw new CustomError(
+      "TOKEN_EXPIRADO",
+      "Token caducado",
+      tiposDeError.ERROR_NO_AUTORIZADO,
+      "El token proporcionado ha caducado."
+    );
+  }
     const user = await UsersRepository.getUserByEmail(decodedToken.email);
     // if (
     //   !user ||
@@ -134,7 +146,7 @@ const updatePassword = async (req, res) => {
   } catch (error) {
     
     console.error(error);
-    res.status(400).send("Error al actualizar la contraseña.");
+    res.status(400).send("Error al actualizar la contraseña. - Token expirado");
   }
 };
 
