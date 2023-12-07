@@ -547,3 +547,15 @@
 {"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-07T04:44:49.405Z"}
 {"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-07T04:44:52.873Z"}
 {"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-07T04:44:57.127Z"}
+{"level":"info","message":"Logout exitoso - Mail: mauricio@gmail.com ","timestamp":"2023-12-07T04:45:31.547Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-07T04:45:31.759Z"}
+{"level":"info","message":"Inicio de sesión exitoso - Usuario: conta.alonso@gmail.com","timestamp":"2023-12-07T04:45:37.667Z"}
+{"level":"info","message":"Acceso exitoso al perfil - Usuario: conta.alonso@gmail.com","timestamp":"2023-12-07T04:45:39.458Z"}
+{"level":"info","message":"Logout exitoso - Mail: conta.alonso@gmail.com ","timestamp":"2023-12-07T04:45:49.830Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-07T04:45:50.034Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-07T04:46:19.631Z"}
+{"level":"info","message":"Inicio de sesión exitoso - Usuario: conta.alonso@gmail.com","timestamp":"2023-12-07T04:46:30.544Z"}
+{"level":"info","message":"Acceso exitoso al perfil - Usuario: conta.alonso@gmail.com","timestamp":"2023-12-07T04:46:33.976Z"}
+{"level":"info","message":"Logout exitoso - Mail: conta.alonso@gmail.com ","timestamp":"2023-12-07T04:46:36.101Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-07T04:46:36.297Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-07T04:47:05.745Z"}
