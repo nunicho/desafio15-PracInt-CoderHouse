@@ -130,6 +130,13 @@ const hbs = handlebars.create({
         }
       });
     },
+    compareOwners: function (owner1, owner2, options) {
+      if (owner1 === owner2) {
+        return options.fn(this);
+      } else {
+        return options.inverse(this);
+      }
+    },
   },
 });
 // NODEMAILER Y JWT PARA CAMBIO DE CONTRASEÑA

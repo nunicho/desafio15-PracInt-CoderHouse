@@ -23,3 +23,7 @@
 {"level":"error","message":"Error al manejar la solicitud de inicio de sesión como administrador - Detalle: pepito is not defined","timestamp":"2023-11-28T00:37:51.966Z"}
 {"level":"fatal","message":"Error al manejar la solicitud de inicio de sesión como administrador - Detalle: pepito is not defined","timestamp":"2023-11-28T00:38:34.727Z"}
 {"level":"error","message":"Faltan datos en la solicitud","timestamp":"2023-11-28T23:23:06.758Z"}
+{"level":"error","message":"Error al acceder a productos - Detalle: premiumLogueado is not defined","timestamp":"2023-12-07T00:27:12.943Z"}
+{"level":"error","message":"Error al acceder a productos - Detalle: premiumLogueado is not defined","timestamp":"2023-12-07T00:28:53.677Z"}
+{"level":"error","message":"Error al acceder a productos - Detalle: premiumLogueado is not defined","timestamp":"2023-12-07T00:29:01.580Z"}
+{"level":"error","message":"Error al acceder a productos - Detalle: premiumLogueado is not defined","timestamp":"2023-12-07T00:29:09.292Z"}

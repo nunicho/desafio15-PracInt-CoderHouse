@@ -6,6 +6,9 @@
     {{#ifEquals usuario.role 'user'}}
         <h2>Bienvenido, Usuario {{usuario.nombre}}!</h2>
     {{/ifEquals}}
+    {{#ifEquals usuario.role 'premium'}}
+        <h2>Bienvenido, Usuario {{usuario.nombre}}!</h2>
+    {{/ifEquals}}
     
 
     <h2>{{titlePage}}</h2>

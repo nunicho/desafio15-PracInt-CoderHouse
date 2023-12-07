@@ -163,10 +163,14 @@ router.get("/DBproducts", auth, authRol(["user"]), async (req, res) => {
 });
 
 router.get("/DBproducts-Premium", auth, authRol(["premium"]), async (req, res) => {
+
   try {
+    let premiumLogueado = req.session.usuario;
+    console.log(premiumLogueado);
     const productos = await productosController.listarProductos(req, res);
     res.header("Content-type", "text/html");
     res.status(200).render("DBproducts-Premium", {
+      logueado: premiumLogueado.email,
       productos: productos.docs,
       hasProducts: productos.docs.length > 0,
       // activeProduct: true,

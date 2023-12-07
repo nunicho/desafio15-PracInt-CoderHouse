@@ -13,7 +13,7 @@
   <button id="finalizarCompra">Finalizar Compra</button>
 </div>
 
-<h1>Lista de productos en Base de Datos PREMIUM</h1>
+<h1> Lista de productos en Base de Datos PREMIUM {{logueado}}  </h1>
 
 <form action="/DBproducts-Premium" method="GET" id="filtroForm">
   <label for="filtro">Filtrar por nombre:</label>
@@ -39,43 +39,46 @@
 <div>
   <ul id="DBProductsList"></ul>
 </div>
-
 {{#if hasProducts}}
- <div class="grid">
-        {{#each productos }}
-        <article class="card product-item">
-             <header class="card__header">
-                <h2 class="product__title">{{ this.title}}</h2>
-            </header>
-            <div class="card__image">
-                <img class="dbimg"src={{this.thumbnail}}
-                    alt="{{this.title}}">
-            </div>
-            <div>
-                <h3>${{this.price}}</h3>
-            </div>
-        </article> 
-        <a href="DBProducts/{{ this._id }}">Más detalles</a>
-        <a href="editarProducto-Premium/{{ this._id }}" class="editar-producto">Editar Producto</a>
-        <a href="eliminarProducto-Premium/" class="eliminar-producto" data-product-id="{{ this._id }}">Eliminar</a>
-        {{/each }}
-    {{else}}
-    <h1> ¡No se encontraron productos! </h1>
-    {{/if}}
-<br>
-  <a href="/DBProducts-Premium?pagina=1">Pág. 1</a>
-
-  {{#if hasPrevPage}}
-      <a href="/DBProducts-Premium?pagina={{prevPage}}">Prev. Pág</a>
-  {{else}}
-  <span>Prev. Pág.</span>
-  {{/if}}
-
-  {{#if hasNextPage}}
-      <a href="/DBProducts-Premium?pagina={{nextPage}}">Next. Pág</a>
-  {{else}}
-  <span>Next. Pág.</span>
-  {{/if}}
+  <div class="grid">
+    {{#each productos }}
+        
+      <article class="card product-item">
+        <header class="card__header">
+          <h2 class="product__title">{{ this.title }}</h2>
+        </header>
+        <div class="card__image">
+          <img class="dbimg" src={{ this.thumbnail }} alt="{{ this.title }}">
+        </div>
+        <div>
+          <h3>${{ this.price }}</h3>
+        </div>
+         <div>
+          {{#compareOwners this.owner ../logueado}}
+           <h4>Agregado por vos</h4>
+          {{/compareOwners}}
+        </div>
+        <div>
+          <a href="DBProducts/{{ this._id }}">Más detalles</a>
+          
+          {{#compareOwners this.owner ../logueado}}
+           <a href="editarProducto-Premium/{{ this._id }}" class="editar-producto">Editar Producto</a>
+          <a href="eliminarProducto-Premium/" class="eliminar-producto" data-product-id="{{ this._id }}">Eliminar</a>
+           {{else}}
+          <a href="#" data-product-id="{{ this._id }}" data-product-name="{{ this.title }}" data-product-price="{{ this.price }}">Agregar al Carrito</a>
+          
+          {{/compareOwners}}
+          
+          
+        </div>
+        
+        
+      </article>
+    {{/each }}
+  </div>
+{{else}}
+  <h1> ¡No se encontraron productos! </h1>
+{{/if}}
 
     <a href="/DBProducts-Premium?pagina={{totalPages}}">Ult. página</a>
  </div> 
