@@ -209,12 +209,27 @@ const processUserRoleChange = async (req, res) => {
     const userId = req.params.id;
     const { newRole } = req.body;
 
-    // Resto del código para cambiar el rol...
+    if (!["user", "premium"].includes(newRole)) {
+      throw new Error("Rol no válido");
+    }
+
+    const usuario = await UsuarioModelo.findById(userId);
+    console.log(`El usuario es ${usuario}`);
+    // Verifica si el usuario existe
+    if (!usuario) {
+      throw new Error("Usuario no encontrado");
+    }
+
+    // Actualiza el rol del usuario
+    usuario.role = newRole;
+
+    // Guarda los cambios en la base de datos
+    await usuario.save();
 
     // Redirige o renderiza la vista según sea necesario
-    res.redirect(`/api/users/premium/${userId}`);
+    res.redirect(`/`);
   } catch (error) {
-    // Renderiza la vista de cambio de rol con un mensaje de error
+    // Renderiza la vista cambiaRole.handlebars con un mensaje de error
     res.render("cambiaRole", {
       title: "Error al Cambiar el Rol",
       success: false,

@@ -696,18 +696,10 @@ router.post("/updatePassword/:token", UsersController.updatePassword);
 
 //---------------------------------------------------------------- RUTA PARA CAMBIAR ROLE---------------//
 
-router.get("/api/users/premium/:id", UsersController.toggleUserRole);
-
-router.get("/api/users/premium/", (req, res) => {
-  // Puedes redirigir a la página de cambio de rol con un mensaje de error o simplemente renderizar una vista informando al usuario.
-  res.render("cambiaRole", {
-    title: "Error",
-    success: false,
-    error: "Se requiere un ID de usuario para cambiar el rol.",
-  });
-});
+router.get("/api/users/premium/", UsersController.toggleUserRole);
 
 router.post("/api/users/premium/:id", UsersController.processUserRoleChange);
+//router.post("/cambiarRol/:id", UsersController.processUserRoleChange);
 
 module.exports = router;
 
