@@ -178,25 +178,23 @@ const toggleUserRole = async (req, res) => {
     }
     const usuario = await UsuarioModelo.findById(userId);
 
-    // Verifica si el usuario existe
+  
     if (!usuario) {
       throw new Error("Usuario no encontrado");
     }
 
-    // Actualiza el rol del usuario
     usuario.role = newRole;
 
-    // Guarda los cambios en la base de datos
+   
     await usuario.save();
 
-    // Renderiza la vista cambiaRole.handlebars con un mensaje de éxito
     res.render("cambiaRole", {
       title: "Cambio de Rol Exitoso",
       success: true,
       message: `Se ha cambiado el rol del usuario ${usuario.nombre} a ${newRole}`,
     });
   } catch (error) {
-    // Renderiza la vista cambiaRole.handlebars con un mensaje de error
+
     res.render("cambiaRole", {
       title: "Error al Cambiar el Rol",
       success: false,
@@ -214,24 +212,19 @@ const processUserRoleChange = async (req, res) => {
     }
 
     const usuario = await UsuarioModelo.findById(userId);
-    console.log(`El usuario es ${usuario}`);
-    // Verifica si el usuario existe
     if (!usuario) {
       throw new Error("Usuario no encontrado");
     }
 
-    // Actualiza el rol del usuario
     usuario.role = newRole;
 
-    // Guarda los cambios en la base de datos
     await usuario.save();
 
     req.session.usuario.role = newRole;
 
-    // Redirige o renderiza la vista según sea necesario
     res.redirect(`/`);
   } catch (error) {
-    // Renderiza la vista cambiaRole.handlebars con un mensaje de error
+    
     res.render("cambiaRole", {
       title: "Error al Cambiar el Rol",
       success: false,

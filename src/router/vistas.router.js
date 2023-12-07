@@ -166,7 +166,6 @@ router.get("/DBproducts-Premium", auth, authRol(["premium"]), async (req, res) =
 
   try {
     let premiumLogueado = req.session.usuario;
-    console.log(premiumLogueado);
     const productos = await productosController.listarProductos(req, res);
     res.header("Content-type", "text/html");
     res.status(200).render("DBproducts-Premium", {
@@ -681,8 +680,6 @@ router.get("/forgotPassword", (req, res) => {
 
 router.get("/resetPassword", (req, res) => {
   const token = req.query.token;
-  console.log(`El token es ${token}`);
-  console.log(`El token reset token es ${req.session.resetToken}`)
   if (!token || token !== req.session.resetToken) {
     return res.status(400).send("Token inválido o caducado");
   }
