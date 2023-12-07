@@ -80,6 +80,19 @@
   <h1> ¡No se encontraron productos! </h1>
 {{/if}}
 
+<br>
+  <a href="/DBProducts-Premium?pagina=1">Pág. 1</a>
+  {{#if hasPrevPage}}
+      <a href="/DBProducts-Premium?pagina={{prevPage}}">Prev. Pág</a>
+  {{else}}
+  <span>Prev. Pág.</span>
+  {{/if}}
+
+  {{#if hasNextPage}}
+      <a href="/DBProducts-Premium?pagina={{nextPage}}">Next. Pág</a>
+  {{else}}
+  <span>Next. Pág.</span>
+  {{/if}}
     <a href="/DBProducts-Premium?pagina={{totalPages}}">Ult. página</a>
  </div> 
 

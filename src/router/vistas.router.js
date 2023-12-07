@@ -696,10 +696,14 @@ router.post("/updatePassword/:token", UsersController.updatePassword);
 
 //---------------------------------------------------------------- RUTA PARA CAMBIAR ROLE---------------//
 
-router.get("/api/users/premium/", UsersController.toggleUserRole);
+router.get("/api/users/premium/", auth, UsersController.toggleUserRole);
 
-router.post("/api/users/premium/:id", UsersController.processUserRoleChange);
-//router.post("/cambiarRol/:id", UsersController.processUserRoleChange);
+router.post(
+  "/api/users/premium/:id",
+  auth,
+  UsersController.processUserRoleChange
+);
+
 
 module.exports = router;
 

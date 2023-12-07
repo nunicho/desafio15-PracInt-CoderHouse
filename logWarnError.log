@@ -486,3 +486,59 @@
 {"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-07T04:08:41.073Z"}
 {"level":"info","message":"Inicio de sesión exitoso - Usuario: mauricio@gmail.com","timestamp":"2023-12-07T04:08:46.810Z"}
 {"level":"info","message":"Acceso exitoso al perfil - Usuario: mauricio@gmail.com","timestamp":"2023-12-07T04:08:50.038Z"}
+{"level":"info","message":"Acceso exitoso al perfil - Usuario: mauricio@gmail.com","timestamp":"2023-12-07T04:12:08.938Z"}
+{"level":"info","message":"Acceso exitoso al perfil - Usuario: mauricio@gmail.com","timestamp":"2023-12-07T04:12:19.501Z"}
+{"level":"info","message":"Logout exitoso - Mail: mauricio@gmail.com ","timestamp":"2023-12-07T04:15:02.994Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-07T04:15:03.208Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-07T04:15:20.182Z"}
+{"level":"info","message":"Acceso exitoso a la página de administrador","timestamp":"2023-12-07T04:15:23.451Z"}
+{"level":"info","message":"Inicio de sesión exitoso como administrador - Administrador: adminCoderPrueba@coder.com","timestamp":"2023-12-07T04:15:34.890Z"}
+{"level":"info","message":"Logout exitoso - Mail: adminCoderPrueba@coder.com ","timestamp":"2023-12-07T04:15:39.480Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-07T04:15:39.688Z"}
+{"level":"info","message":"Inicio de sesión exitoso - Usuario: mauricio@gmail.com","timestamp":"2023-12-07T04:16:04.454Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-07T04:16:07.562Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-07T04:16:25.413Z"}
+{"level":"info","message":"Logout exitoso - Mail: mauricio@gmail.com ","timestamp":"2023-12-07T04:20:59.038Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-07T04:20:59.251Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-07T04:21:07.833Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-07T04:22:36.678Z"}
+{"level":"info","message":"Inicio de sesión exitoso - Usuario: mauricio@gmail.com","timestamp":"2023-12-07T04:22:42.873Z"}
+{"level":"info","message":"Logout exitoso - Mail: mauricio@gmail.com ","timestamp":"2023-12-07T04:22:59.363Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-07T04:22:59.564Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-07T04:23:04.776Z"}
+{"level":"info","message":"Acceso exitoso a la página de administrador","timestamp":"2023-12-07T04:25:17.702Z"}
+{"level":"info","message":"Inicio de sesión exitoso como administrador - Administrador: adminCoderPrueba@coder.com","timestamp":"2023-12-07T04:25:26.087Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-12-07T04:25:29.273Z"}
+{"level":"info","message":"Producto creado correctamente - Id: TA-3 Nombre: Taladro Atornillador MAX","timestamp":"2023-12-07T04:26:11.770Z"}
+{"level":"info","message":"Producto creado correctamente - Id: TA-2 Nombre: Bomba de agua Bestway","timestamp":"2023-12-07T04:27:14.817Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-12-07T04:27:19.436Z"}
+{"level":"info","message":"Producto creado correctamente - Id: TA-190 Nombre: Set de destornilladores","timestamp":"2023-12-07T04:28:13.747Z"}
+{"level":"info","message":"Producto creado correctamente - Id: TA-250 Nombre: Disco abrasivo Flap","timestamp":"2023-12-07T04:28:58.136Z"}
+{"level":"info","message":"Producto creado correctamente - Id: TA-1800 Nombre: Sella Roscas Hidro 5","timestamp":"2023-12-07T04:29:42.143Z"}
+{"level":"info","message":"Producto creado correctamente - Id: TG-20 Nombre: Bicicleta","timestamp":"2023-12-07T04:30:28.677Z"}
+{"level":"info","message":"Producto creado correctamente - Id: TG-18100 Nombre: Cadena","timestamp":"2023-12-07T04:31:16.572Z"}
+{"level":"info","message":"Producto creado correctamente - Id: TX-56 Nombre: Morsa de banco giratoria","timestamp":"2023-12-07T04:32:10.682Z"}
+{"level":"info","message":"Producto creado correctamente - Id: TX-57 Nombre: Pico Albañil","timestamp":"2023-12-07T04:32:52.932Z"}
+{"level":"info","message":"Producto creado correctamente - Id: TB-5426 Nombre: Caja de clavos","timestamp":"2023-12-07T04:33:43.729Z"}
+{"level":"info","message":"Producto creado correctamente - Id: TC-2 Nombre: Cinta Metrica 5 Metros","timestamp":"2023-12-07T04:34:36.286Z"}
+{"level":"info","message":"Producto creado correctamente - Id: TC-4 Nombre: Prensa sargento","timestamp":"2023-12-07T04:35:28.259Z"}
+{"level":"info","message":"Producto creado correctamente - Id: TS-23 Nombre: Cemento 50kg","timestamp":"2023-12-07T04:36:40.522Z"}
+{"level":"info","message":"Producto creado correctamente - Id: TB-65 Nombre: Hidrófugo Ceresita","timestamp":"2023-12-07T04:38:34.896Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-12-07T04:38:42.402Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-12-07T04:38:47.516Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-12-07T04:38:50.968Z"}
+{"level":"info","message":"Logout exitoso - Mail: adminCoderPrueba@coder.com ","timestamp":"2023-12-07T04:38:56.706Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-07T04:38:56.921Z"}
+{"level":"info","message":"Inicio de sesión exitoso - Usuario: mauricio@gmail.com","timestamp":"2023-12-07T04:39:02.884Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-07T04:39:07.626Z"}
+{"level":"info","message":"Acceso exitoso al perfil - Usuario: mauricio@gmail.com","timestamp":"2023-12-07T04:39:15.996Z"}
+{"level":"info","message":"Acceso exitoso al perfil - Usuario: mauricio@gmail.com","timestamp":"2023-12-07T04:39:18.735Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-07T04:40:05.678Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-07T04:40:11.597Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-07T04:40:15.777Z"}
+{"level":"info","message":"Producto creado correctamente - Id: TS-56 Nombre: Pala ancha","timestamp":"2023-12-07T04:41:24.846Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-07T04:41:44.118Z"}
+{"level":"info","message":"Acceso exitoso al perfil - Usuario: mauricio@gmail.com","timestamp":"2023-12-07T04:41:55.848Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-07T04:42:03.883Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-07T04:42:08.162Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-07T04:42:14.889Z"}
