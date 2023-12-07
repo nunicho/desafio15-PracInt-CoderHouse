@@ -418,3 +418,41 @@
 {"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-07T01:36:55.603Z"}
 {"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-07T01:37:05.307Z"}
 {"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-07T01:37:22.046Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-07T01:45:54.466Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-07T01:49:24.111Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-07T01:49:53.727Z"}
+{"level":"info","message":"Logout exitoso - Mail: premium@gmail.com ","timestamp":"2023-12-07T01:54:30.864Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-07T01:54:31.083Z"}
+{"level":"info","message":"Acceso exitoso a la página de administrador","timestamp":"2023-12-07T01:54:49.366Z"}
+{"level":"info","message":"Inicio de sesión exitoso como administrador - Administrador: adminCoderPrueba@coder.com","timestamp":"2023-12-07T01:54:56.605Z"}
+{"level":"info","message":"Acceso exitoso a productos - Administrador","timestamp":"2023-12-07T01:55:00.152Z"}
+{"level":"info","message":"Producto creado correctamente - Id: TA-3323 Nombre: Maquinaria","timestamp":"2023-12-07T01:55:22.643Z"}
+{"level":"info","message":"Logout exitoso - Mail: adminCoderPrueba@coder.com ","timestamp":"2023-12-07T01:55:28.855Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-07T01:55:29.065Z"}
+{"level":"info","message":"Inicio de sesión exitoso - Usuario: premium@gmail.com","timestamp":"2023-12-07T01:55:41.646Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-07T01:55:43.766Z"}
+{"level":"info","message":"Acceso exitoso a detalle producto Id: 6571260a72ec28e8345c9691 - Nombre: Maquinaria","timestamp":"2023-12-07T01:57:50.661Z"}
+{"level":"info","message":"Acceso exitoso a detalle producto Id: 657118b7d9afc6a024ddfce1 - Nombre: Herramienta generica","timestamp":"2023-12-07T01:57:54.225Z"}
+{"level":"info","message":"Logout exitoso - Mail: premium@gmail.com ","timestamp":"2023-12-07T01:58:14.607Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-07T01:58:14.809Z"}
+{"level":"info","message":"Acceso a la página de registro","timestamp":"2023-12-07T01:58:18.602Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-07T01:58:48.098Z"}
+{"level":"info","message":"Inicio de sesión exitoso - Usuario: premium2@gmail.com","timestamp":"2023-12-07T01:58:57.746Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-07T01:59:00.216Z"}
+{"level":"info","message":"Producto creado correctamente - Id: TA-343 Nombre: otra herramienta","timestamp":"2023-12-07T01:59:33.276Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-07T01:59:40.902Z"}
+{"level":"info","message":"Logout exitoso - Mail: premium2@gmail.com ","timestamp":"2023-12-07T01:59:50.464Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-07T01:59:50.672Z"}
+{"level":"info","message":"Inicio de sesión exitoso - Usuario: premium@gmail.com","timestamp":"2023-12-07T02:00:22.486Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-07T02:00:25.180Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-07T02:01:45.803Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-07T02:03:21.094Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-07T02:16:44.793Z"}
+{"level":"info","message":"Logout exitoso - Mail: premium@gmail.com ","timestamp":"2023-12-07T02:18:52.271Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-07T02:18:52.472Z"}
+{"level":"info","message":"Inicio de sesión exitoso - Usuario: premium2@gmail.com","timestamp":"2023-12-07T02:19:10.358Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-07T02:19:12.606Z"}
+{"level":"info","message":"Logout exitoso - Mail: premium2@gmail.com ","timestamp":"2023-12-07T02:19:31.405Z"}
+{"level":"info","message":"Acceso a la página de inicio de sesión","timestamp":"2023-12-07T02:19:31.620Z"}
+{"level":"info","message":"Inicio de sesión exitoso - Usuario: mauricio@gmail.com","timestamp":"2023-12-07T02:19:36.865Z"}
+{"level":"info","message":"Acceso exitoso a productos - Usuario","timestamp":"2023-12-07T02:19:39.571Z"}
