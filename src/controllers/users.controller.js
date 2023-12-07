@@ -226,6 +226,8 @@ const processUserRoleChange = async (req, res) => {
     // Guarda los cambios en la base de datos
     await usuario.save();
 
+    req.session.usuario.role = newRole;
+
     // Redirige o renderiza la vista según sea necesario
     res.redirect(`/`);
   } catch (error) {
