@@ -1,0 +1,10 @@
+<h2>Cambiar Rol de Usuario</h2>
+<hr>
+<form action="/api/users/premium/{{usuario._id}}" method="post">
+  <label for="newRole">Nuevo Rol:</label>
+  <select name="newRole" id="newRole">
+    <option value="user">Usuario</option>
+    <option value="premium">Premium</option>
+  </select>
+<button type="submit">Cambiar Rol</button>
+</form>

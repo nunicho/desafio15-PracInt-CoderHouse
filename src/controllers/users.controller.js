@@ -1,6 +1,6 @@
-//const UserService = require("../services/users.service.js");
 const mongoose = require("mongoose");
 const UsersRepository = require("../dao/repository/users.repository")
+const UsuarioModelo = require("../dao/DB/models/users.modelo.js")
 
 // DOTENV
 const config = require("../config/config.js");
@@ -168,6 +168,60 @@ if (decodedToken.exp < Date.now() / 1000) {
   }
 };
 
+const toggleUserRole = async (req, res) => {
+  try {
+    const userId = req.params.id;
+    const { newRole } = req.body;
+
+    if (!["user", "premium"].includes(newRole)) {
+      throw new Error("Rol no válido");
+    }
+    const usuario = await UsuarioModelo.findById(userId);
+
+    // Verifica si el usuario existe
+    if (!usuario) {
+      throw new Error("Usuario no encontrado");
+    }
+
+    // Actualiza el rol del usuario
+    usuario.role = newRole;
+
+    // Guarda los cambios en la base de datos
+    await usuario.save();
+
+    // Renderiza la vista cambiaRole.handlebars con un mensaje de éxito
+    res.render("cambiaRole", {
+      title: "Cambio de Rol Exitoso",
+      success: true,
+      message: `Se ha cambiado el rol del usuario ${usuario.nombre} a ${newRole}`,
+    });
+  } catch (error) {
+    // Renderiza la vista cambiaRole.handlebars con un mensaje de error
+    res.render("cambiaRole", {
+      title: "Error al Cambiar el Rol",
+      success: false,
+      error: error.message,
+    });
+  }
+};
+const processUserRoleChange = async (req, res) => {
+  try {
+    const userId = req.params.id;
+    const { newRole } = req.body;
+
+    // Resto del código para cambiar el rol...
+
+    // Redirige o renderiza la vista según sea necesario
+    res.redirect(`/api/users/premium/${userId}`);
+  } catch (error) {
+    // Renderiza la vista de cambio de rol con un mensaje de error
+    res.render("cambiaRole", {
+      title: "Error al Cambiar el Rol",
+      success: false,
+      error: error.message,
+    });
+  }
+};
 
 module.exports = {
   createUser,
@@ -176,76 +230,7 @@ module.exports = {
   updateUser,
   deleteUser,
   updatePassword,
+  toggleUserRole,
+  processUserRoleChange,
 };
 
-
-/*
-//const UserService = require("../services/users.service.js");
-const mongoose = require("mongoose");
-const UsersRepository = require("../dao/repository/users.repository")
-
-const createUser = async (userData) => {
-  try {
-    const user = await UsersRepository.createUser(userData);
-    return user;
-  } catch (error) {
-    throw error;
-  }
-}
-
-const getUserByEmail = async (email) => {
-  try {
-    const user = await UsersRepository.getUserByEmail(email);
-    return user;
-  } catch (error) {
-    throw error;
-  }
-}
-
-
-const getUsers = async (req, res) => {
-  try {
-    const users = await UsersRepository.getUsers();
-    res.status(200).json(users);
-  } catch (error) {
-    res.status(500).json({ error: "Error fetching users" });
-  }
-};
-
-const updateUser = async (req, res) => {
-  try {
-    const userId = req.params.userId;
-    const userData = req.body;
-    const updatedUser = await UsersRepository.updateUser(userId, userData);
-    if (!updatedUser) {
-      res.status(404).json({ error: "User not found" });
-    } else {
-      res.status(200).json(updatedUser);
-    }
-  } catch (error) {
-    res.status(500).json({ error: "Error updating user" });
-  }
-};
-
-const deleteUser = async (req, res) => {
-  try {
-    const userId = req.params.userId;
-    await UsersRepository.deleteUser(userId);
-    res.status(204).end();
-  } catch (error) {
-    res.status(500).json({ error: "Error deleting user" });
-  }
-};
-
-
-
-
-module.exports = {
-  createUser,
-  getUserByEmail,
-  getUsers,
-  updateUser,
-  deleteUser,
- };
-
-*/

@@ -28,6 +28,9 @@
         <div>
               <a href="/chat">Chat- Con Handlebars</a>
         </div>
+            <div>
+              <a href="/api/users/premium/{{usuario.id}}">Cambiar Rol</a>
+        </div>
     {{/ifEquals}}
         {{#ifEquals usuario.role 'premium'}}
         <div>
@@ -35,6 +38,9 @@
         </div>
         <div>
               <a href="/chat">Chat- Con Handlebars</a>
+        </div>
+        <div>
+              <a href="/api/users/premium/{{usuario.id}}">Cambiar Rol</a>
         </div>
     {{/ifEquals}}
 
