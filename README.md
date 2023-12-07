@@ -14,15 +14,15 @@ Mauricio Javier ALONSO
 
 ## 3. TITULO DESAFIO ENTREGABLE: 
 
-Implementación de logger
+Tercera práctica integradora
 
 ## 4. N° DESAFIO ENTREGABLE: 
 
-N° 14
+N° 15
 
 ## 5. CONSIGNA DESAFIO ENTREGABLE: 
 
-Se aplicará un  módulo de mocking y un manejador de errores a tu servidor actual.
+Aspectos a incluir: recuperación de contraseña; nuevo rol premium. 
 
 
 ## 6. Usuario Administrador:
@@ -76,4 +76,10 @@ errors.log ---> guarda los errores desde el nivel error. Este archivo se visuali
 
 npm run pro   ---> activa modo production
 npm run dev   ---> activa modo development
+
+## 16 Cambio de contraseña
+Para acceder a esta ruta está incorporado un link en el login
+
+## 16 Cambio de rol
+Para acceder a esta ruta está incorporado un link en el home (para ello hay que ingresar como usuario)
 
